@@ -29,7 +29,7 @@ Kami masih membutuhkan banyak kontribusi dari teman-teman. Silahkan Fork, Star, 
 Silahkan melakukan kontribusi untuk mengembangankan IDFramework melalui Clone di Branch Alpha.
 
 ```
-git clone -alpha https://github.com/mulyawansentosa/IDFramework.git
+git clone -dev https://github.com/mulyawansentosa/IDFramework.git
 ```
 
 Setelah kami review kami akan naikan menjadi beta dan master. Dukungan Anda adalah kekuatan Framework ini :) Maju Indonesiaku!
