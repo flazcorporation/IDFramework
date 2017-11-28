@@ -19,7 +19,7 @@ class id_theme extends id{
 		}
 		require_once id_project_dir.'/'.$file;
 	}	
-
+    
     function header(){
 		$data 	= $this->models->getall();
 		$this->load('theme/back_end/kepala.php',$data);
