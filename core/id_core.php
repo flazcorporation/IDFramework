@@ -40,7 +40,7 @@ class id_core extends id{
 			foreach($folder_list[$key] as $val1){
 				if($val1 === $class){
 					if(file_exists($key.'/'.$val1.'/idc_'.$val1.'.php')){
-						include $key.'/'.$val1.'/idc_'.$val1.'.php';
+						require_once $key.'/'.$val1.'/idc_'.$val1.'.php';
 					}
 				}
 			}
@@ -62,7 +62,7 @@ class id_core extends id{
 			foreach($folder_list[$key] as $val1){
 				if($val1 === $class){
 					if(file_exists($key.'/'.$val1.'/idm_'.$val1.'.php')){
-						include $key.'/'.$val1.'/idm_'.$val1.'.php';
+						require_once $key.'/'.$val1.'/idm_'.$val1.'.php';
 					}
 				}
 			}
@@ -88,7 +88,7 @@ class id_core extends id{
 	function execute(){
 		if($this->uri->controller()){
 			$page 	= $this->uri->segment(0);
-			//Include Controller if Exist
+			//require_once Controller if Exist
 			if($this->check_controller_file($page)){
 				$this->include_controller_file($page);
 				if($this->check_class('idc_'.$page)){
@@ -117,12 +117,12 @@ class id_core extends id{
 	}
 
 	public function default_controller(){
-		//Check to include model
+		//Check to require_once model
 		if($this->check_model_file(id_default_root)){
 			$this->include_model_file(id_default_root);
 		}
 
-		//Check to include controller file
+		//Check to require_once controller file
 		if($this->check_controller_file(id_default_root)){
 			$this->include_controller_file(id_default_root);
 			if($this->check_class('idc_'.id_default_root)){

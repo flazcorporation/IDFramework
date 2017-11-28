@@ -6,6 +6,7 @@ class id_view extends id{
 	function __construct(){
 		parent::uri();
 		parent::html();
+		parent::theme();
 	}
 
 	public function load($file,$data){
@@ -14,7 +15,10 @@ class id_view extends id{
 				${$key} 	= $val;
 			}	
 		}
-		include id_project_dir.'/'.$this->uri->controller().'/'.$file;
+		$this->theme->header();
+		require_once id_project_dir.'/'.$this->uri->controller().'/'.$file;
+		$this->theme->footer();
 	}
+
 }
 ?>

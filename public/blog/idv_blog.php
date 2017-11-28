@@ -7,7 +7,7 @@ if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;u
 	</head>
 	<body>
 		<?php
-			echo "Ini Kepala";
+			echo "Ini Tengah <br />";
 		?>
 	</body>
 </html>

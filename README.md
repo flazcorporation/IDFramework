@@ -105,6 +105,34 @@ Method yang saat ini tersedia antara lain:
 | Contoh        | http://framework.id/blog/id/5         |
 | Hasil         | id                                    |
 
+### $this->uri->link($string)
+
+| Doc           | Description                           |
+| ------------- |:---------------------------------:    |
+| Type          | String                                |
+| Fungsi        | Menampilkan Link URL                  |
+| Contoh        | $this->uri->link('blog/id/1')         |
+| Hasil         | http://framework.id/blog/id/1         |
+
+### $this->uri->file($file)
+
+| Doc           | Description                           |
+| ------------- |:---------------------------------:    |
+| Type          | String                                |
+| Fungsi        | Menampilkan Link URL File             |
+| Contoh        | $this->uri->link('blog/id/1')         |
+| Hasil         | http://framework.id/blog/id/1         |
+
+### $this->uri->inc($file)
+
+| Doc           | Description                           |
+| ------------- |:---------------------------------:    |
+| Type          | String                                |
+| Fungsi        | Menampilkan Link URL Include          |
+| Contoh        | $this->uri->link('blog/id/1')         |
+| Hasil         | http://framework.id/blog/id/1         |
+
+
 ## HTML Class
 Untuk menggunakan fasilitas HTML Class, tambahkan kode berikut pada custructor di MVC Anda:
 

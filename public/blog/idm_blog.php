@@ -19,9 +19,6 @@ class idm_blog extends id_model{
 
 	function getall(){
 		$result = $this->pdo->select_all('user');
-		echo "<pre>";
-			var_dump($result);
-		echo "</pre>";
 	}
 	
 }

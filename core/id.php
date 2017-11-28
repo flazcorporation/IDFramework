@@ -9,22 +9,29 @@ class id{
 	public $view;
 	public $html;
 	public $pdo;
+	public $str;
+	public $theme;
 	
 	public function __construct(){
-		include "id_core.php";
-		include "id_uri.php";
-		include "id_controller.php";
-		include "id_model.php";
-		include "id_view.php";
-		include "helper/id_html.php";
-		include "helper/id_pdo.php";
-		$this->core = new id_core();
-		$this->uri 	= new id_uri();
-		$this->cont = new id_controller();
-		$this->mode = new id_model();
-		$this->view = new id_view();
-		$this->html = new id_html();
-		$this->pdo 	= new id_pdo();
+		require_once "id_core.php";
+		require_once "id_uri.php";
+		require_once "id_controller.php";
+		require_once "id_model.php";
+		require_once "id_view.php";
+		require_once "helper/id_html.php";
+		require_once "helper/id_pdo.php";
+		require_once "helper/id_str.php";
+		require_once "helper/id_theme.php";
+		
+		$this->core 	= new id_core();
+		$this->uri 		= new id_uri();
+		$this->cont 	= new id_controller();
+		$this->mode 	= new id_model();
+		$this->view 	= new id_view();
+		$this->html 	= new id_html();
+		$this->pdo 		= new id_pdo();
+		$this->str 		= new id_str();
+		$this->theme	= new id_theme();
 	}
 
   	public function core(){
@@ -55,8 +62,17 @@ class id{
 		$this->pdo = new id_pdo();
   	}
 
+  	public function str(){
+		$this->str = new id_str();
+  	}
+
+  	public function theme(){
+		$this->theme = new id_theme();
+  	}
+
   	public function run(){
   		$this->core->execute();
-  	}
+	}
+	  
 }
 ?>
