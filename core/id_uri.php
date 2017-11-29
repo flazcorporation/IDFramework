@@ -73,40 +73,8 @@ class id_uri extends id{
 			return array();
 		}
 	}
-	function link($url){
-		$dir 	= explode('/',$this->str->before($_SERVER['PHP_SELF'],'/index.php'));
-		if(sizeof($dir)>1){
-			$base_dir 	= '/'.end($dir);
-		}else{
-			$base_dir 	= "";
-		}
-		if(isset($_SERVER['HTTPS']) && 'on' === $_SERVER['HTTPS']){
-			$protocol 	= "https://";
-		}else{
-			$protocol 	= "http://";
-		}
-		return $protocol.$_SERVER['HTTP_HOST'].$base_dir.'/'.$url;			
-	}
-	function file($url){
-		if($_SERVER['SERVER_NAME'] == 'localhost'){
-			return $url;
-		}else{
-			$dir 	= explode('/',$this->str->before($_SERVER['PHP_SELF'],'/index.php'));
-			if(sizeof($dir)>1){
-				$base_dir 	= end($dir);
-			}else{
-				$base_dir 	= "";
-			}
-			return $base_dir.'/'.$url;
-		}
-	}
-	function inc($pre,$url){
-		$url1  		= explode('/',$url);
-		if($url1[0] == ''){
-			unset($url1[0]);
-			$url 	= implode('/',$url1);
-		}
-		return $pre.$url;
-	}
+	function base($url = null){
+		return id_base_url.'/'.$url;
+	}	
 }
 ?>

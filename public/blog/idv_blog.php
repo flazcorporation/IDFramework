@@ -7,7 +7,9 @@ if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;u
 	</head>
 	<body>
 		<?php
+			echo $this->form->open();
 			echo "Ini Tengah <br />";
-		?>
+			echo $this->form->open();
+			?>
 	</body>
 </html>

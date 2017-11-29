@@ -13,7 +13,7 @@ class idc_blog extends id_controller{
 	}
 
 	function index(){
-  		echo "Hello";
+		$this->view->index();
 	}
 	  
 	function model(){
@@ -22,7 +22,7 @@ class idc_blog extends id_controller{
 
 	function tampilkan(){
 		$data 	= $this->model->getall();
-		$this->view->load('idv_blog.php',$data);
+		$this->view->back('idv_blog.php',$data);
 	}
 }
 ?>

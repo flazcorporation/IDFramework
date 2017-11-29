@@ -11,6 +11,7 @@ class id{
 	public $pdo;
 	public $str;
 	public $theme;
+	public $form;
 	
 	public function __construct(){
 		require_once "id_core.php";
@@ -22,6 +23,7 @@ class id{
 		require_once "helper/id_pdo.php";
 		require_once "helper/id_str.php";
 		require_once "helper/id_theme.php";
+		require_once "helper/id_form.php";
 		
 		$this->core 	= new id_core();
 		$this->uri 		= new id_uri();
@@ -32,6 +34,7 @@ class id{
 		$this->pdo 		= new id_pdo();
 		$this->str 		= new id_str();
 		$this->theme	= new id_theme();
+		$this->form		= new id_form();
 	}
 
   	public function core(){
@@ -70,7 +73,11 @@ class id{
 		$this->theme = new id_theme();
   	}
 
-  	public function run(){
+  	public function form(){
+		$this->form = new id_form();
+  	}
+
+	  public function run(){
   		$this->core->execute();
 	}
 	  

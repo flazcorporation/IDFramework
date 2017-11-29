@@ -102,14 +102,14 @@ class id_core extends id{
 						if($this->check_method('idc_'.$page,'index')){
 							$class_file->index();
 						}else{
-							echo "Default Method is not found";									
+							echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Default Method is not found</div>";
 						}
 					}
 				}else{
-					echo "Controller is not found";					
+					echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Controller is not found</div>";
 				}
 			}else{
-				echo "Controller is not found";
+				echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Controller is not found</div>";
 			}
 		}else{
 			$this->default_controller();
@@ -131,13 +131,13 @@ class id_core extends id{
 					$class_file 	= new $classname();
 					$class_file->index();
 				}else{
-					echo "Default Method is not found";									
+					echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Default Method is not found</div>";
 				}
 			}else{
-				echo "Default Controller is not found";				
+				echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Default Controller is not found</div>";
 			}
 		}else{
-				echo "Default Controller is not found";
+			echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Default Controller is not found</div>";
 		}
 	}	
 }
