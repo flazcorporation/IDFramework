@@ -32,7 +32,7 @@ class id_theme extends id{
 	function front_index(){
 		$data 	= $this->data();
 		$this->front_header();
-		$this->load('theme/front/web/content.php',$data);
+		$this->load('blog/idv_index.php',$data);
 		$this->front_footer();
 	}
 
@@ -50,17 +50,17 @@ class id_theme extends id{
 	function back_index(){
 		$data 	= $this->data();
 		$this->front_header();
-		$this->load('theme/front/web/content.php',$data);
+		$this->load('theme/back/material/content.php',$data);
 		$this->front_header();
   	}
 
   	function back_header(){
 		$data 	= $this->data();
-		$this->load('theme/back/kepala.php',$data);
+		$this->load('theme/back/material/header.php',$data);
   	}
 
   	function back_footer(){
-		$this->load('theme/back/kaki.php');
+		$this->load('theme/back/material/footer.php');
   	}
 	//======== BACK END THEME ========//
 }
