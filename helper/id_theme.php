@@ -49,9 +49,9 @@ class id_theme extends id{
 	//======== BACK END THEME ========//
 	function back_index(){
 		$data 	= $this->data();
-		$this->front_header();
+		$this->back_header();
 		$this->load('theme/back/material/content.php',$data);
-		$this->front_header();
+		$this->back_footer();
   	}
 
   	function back_header(){
