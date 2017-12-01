@@ -1,7 +1,7 @@
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
+        <div class="col s12">
           <h5 class="white-text">Copyright</h5>
           <p class="grey-text text-lighten-4">
           Copyright (c) 2017, Flaz Corporation<br />
