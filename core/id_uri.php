@@ -4,6 +4,8 @@ class id_uri extends id{
 
 	function __construct(){
 		parent::str();
+		parent::config();
+		parent::crypt();
 	}
 
 	public function controller(){
@@ -14,7 +16,7 @@ class id_uri extends id{
 		}else{
 			$page 		= "";
 		}
-		return $page;
+		return $this->crypt->de($page);
 	}
 
 	public function method(){
@@ -25,7 +27,7 @@ class id_uri extends id{
 		}else{
 			$page 		= "";
 		}
-		return $page;
+		return $this->crypt->de($page);
 	}
 
 	public function segment($id){
@@ -35,7 +37,7 @@ class id_uri extends id{
 			if(sizeof($url)-1 < $id){
 				return "";
 			}else{
-				return $url[$id];
+				return $this->crypt->de($url[$id]);
 			}
 		}else{
 			return "";
@@ -44,7 +46,7 @@ class id_uri extends id{
 	public function all(){
 		$get 		= array_keys($_GET);
 		if(isset($get[0])){
-			$url 		= explode('/',$get[0]);
+			$url 		= explode('/',$this->crypt->de($get[0]));
 			return $url;
 		}else{
 			return array();
@@ -53,7 +55,7 @@ class id_uri extends id{
 	public function last(){
 		$get 		= array_keys($_GET);
 		if(isset($get[0])){
-			$url 		= explode('/',$get[0]);
+			$url 		= explode('/',$this->crypt->de($get[0]));
 			return end($url);
 		}else{
 			return "";
@@ -62,7 +64,7 @@ class id_uri extends id{
 	public function except($remove){
 		$get 		= array_keys($_GET);
 		if(isset($get[0])){
-			$url 		= explode('/',$get[0]);
+			$url 		= explode('/',$this->crypt->de($get[0]));
 			foreach($url as $key => $value){
 				if(in_array($key,$remove)){
 					unset($url[$key]);
@@ -74,7 +76,7 @@ class id_uri extends id{
 		}
 	}
 	function base($url = null){
-		return id_base_url.'/'.$url;
+		return $this->config->id_base_url.'/'.$url;
 	}	
 }
 ?>

@@ -10,10 +10,12 @@ class idc_blog extends id_controller{
 		$this->model 	= new idm_blog();
 		$this->view 	= new id_view();
 		parent::uri();
+		parent::crypt();
 	}
 
 	function index(){
 		$this->view->index();
+		echo 'Ini adalah: '.$this->crypt->en('admin');
 	}
 	  
 	function model(){

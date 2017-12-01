@@ -9,40 +9,47 @@ if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;u
 class database{
 
 	protected $database='';
-
+	public $db;
+	
 	public function __toString(){
 	    return (string)$this->database;
 	}
 
+	/*
 	private $driver 	= driver;
     private $host      	= host;
     private $user      	= userdb;
     private $pass      	= pass;
-    private $dbname    	= db;
+	private $dbname    	= db;
+	*/
     private $dbh;
     public $error;
 
 	public $stmt;
 
     public function __construct(){
-        // Set DSN
-        $dsn = driver.':host=' . $this->host . ';dbname=' . $this->dbname;
-        // Set options
+		
+		require_once "config/id_db.php";
+		$this->db 		= new id_db();
+		
+        $dsn = $this->db->driver.':host=' . $this->db->host . ';dbname=' . $this->db->name;
         $options = array(
             PDO::ATTR_PERSISTENT    => true,
             PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION
-//			PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true
+			//PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true
         );
-        // Create a new PDO instanace
         try{
-            $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
+            $this->dbh = new PDO($dsn, $this->db->user, $this->db->pass, $options);
         }
-        // Catch any errors
         catch(PDOException $e){
             $this->error = $e->getMessage();
         }
     }
     
+	public function db(){
+		$this->db 	= new id_db();  		
+  	}
+
 	public function query($query){
 	    $this->stmt = $this->dbh->prepare($query);
 	}

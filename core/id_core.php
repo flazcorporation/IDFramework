@@ -5,6 +5,7 @@ class id_core extends id{
 	
 	function __construct(){
 		parent::uri();
+		parent::config();
 	}
 
 	public function dir_list($dir, $dir_array){
@@ -26,7 +27,7 @@ class id_core extends id{
 	}
 
 	public function check_controller_file($controller){
-		if(file_exists(id_project_dir.'/'.$controller.'/idc_'.$controller.'.php')){
+		if(file_exists($this->config->id_project_dir.'/'.$controller.'/idc_'.$controller.'.php')){
 			return true;
 		}else{
 			return false;
@@ -35,7 +36,7 @@ class id_core extends id{
 
 	public function include_controller_file($class){
 		$folder_list = array();
-		$folder_list = $this->dir_list(id_project_dir,$folder_list);
+		$folder_list = $this->dir_list($this->config->id_project_dir,$folder_list);
 		foreach($folder_list as $key => $val){
 			foreach($folder_list[$key] as $val1){
 				if($val1 === $class){
@@ -48,7 +49,7 @@ class id_core extends id{
 	}
 
 	public function check_model_file($controller){
-		if(file_exists(id_project_dir.'/'.$controller.'/idm_'.$controller.'.php')){
+		if(file_exists($this->config->id_project_dir.'/'.$controller.'/idm_'.$controller.'.php')){
 			return true;
 		}else{
 			return false;
@@ -57,7 +58,7 @@ class id_core extends id{
 
 	public function include_model_file($class){
 		$folder_list = array();
-		$folder_list = $this->dir_list(id_project_dir,$folder_list);
+		$folder_list = $this->dir_list($this->config->id_project_dir,$folder_list);
 		foreach($folder_list as $key => $val){
 			foreach($folder_list[$key] as $val1){
 				if($val1 === $class){
@@ -118,16 +119,16 @@ class id_core extends id{
 
 	public function default_controller(){
 		//Check to require_once model
-		if($this->check_model_file(id_default_root)){
-			$this->include_model_file(id_default_root);
+		if($this->check_model_file($this->config->id_default_root)){
+			$this->include_model_file($this->config->id_default_root);
 		}
 
 		//Check to require_once controller file
-		if($this->check_controller_file(id_default_root)){
-			$this->include_controller_file(id_default_root);
-			if($this->check_class('idc_'.id_default_root)){
-				if($this->check_method('idc_'.id_default_root,'index')){
-					$classname 		= 'idc_'.id_default_root;
+		if($this->check_controller_file($this->config->id_default_root)){
+			$this->include_controller_file($this->config->id_default_root);
+			if($this->check_class('idc_'.$this->config->id_default_root)){
+				if($this->check_method('idc_'.$this->config->id_default_root,'index')){
+					$classname 		= 'idc_'.$this->config->id_default_root;
 					$class_file 	= new $classname();
 					$class_file->index();
 				}else{

@@ -2,6 +2,8 @@
 if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;url="."http://".$_SERVER['SERVER_NAME']."'>");
 
 class id{
+	public $config;
+	public $crypt;
 	public $core;
 	public $uri;
 	public $cont;
@@ -14,6 +16,8 @@ class id{
 	public $form;
 	
 	public function __construct(){
+		require_once "config/id_config.php";
+		require_once "id_crypt.php";
 		require_once "id_core.php";
 		require_once "id_uri.php";
 		require_once "id_controller.php";
@@ -25,6 +29,8 @@ class id{
 		require_once "helper/id_theme.php";
 		require_once "helper/id_form.php";
 		
+		$this->config 	= new id_config();
+		$this->crypt 	= new id_crypt();
 		$this->core 	= new id_core();
 		$this->uri 		= new id_uri();
 		$this->cont 	= new id_controller();
@@ -37,7 +43,15 @@ class id{
 		$this->form		= new id_form();
 	}
 
-  	public function core(){
+	public function config(){
+		$this->config = new id_config();  		
+  	}
+
+  	public function crypt(){
+		$this->crypt = new id_crypt();  		
+  	}
+
+	public function core(){
 		$this->core = new id_core();  		
   	}
 

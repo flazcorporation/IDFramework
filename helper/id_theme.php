@@ -8,6 +8,8 @@ class id_theme extends id{
 	function __construct(){
 		parent::uri();
 		parent::pdo();
+		parent::config();
+		parent::crypt();
     }
 
 	public function load($file,$dat = null){
@@ -16,7 +18,7 @@ class id_theme extends id{
 				${$keys} 	= $vals;
 			}
 		}
-		require_once id_project_dir.'/'.$file;
+		require_once $this->config->id_project_dir.'/'.$file;
 	}
 
 	function data(){

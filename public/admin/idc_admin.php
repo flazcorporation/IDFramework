@@ -10,6 +10,7 @@ class idc_admin extends id_controller{
 		$this->model 	= new idm_admin();
 		$this->view 	= new id_view();
 		parent::uri();
+		parent::crypt();
 	}
 
 	function index(){
@@ -21,8 +22,19 @@ class idc_admin extends id_controller{
 	}
 
 	function tampilkan(){
-		$data['data'] = $this->model->getdata();
+		$data['data'] = $this->model->getall();
 		$this->view->back('idv_admin.php',$data);
+	}
+	
+	function encrypt(){
+		$string 	= "Mulyawan Sentosa";
+		$result = $this->crypt->en($string);
+		echo $result."<br />";
+
+		$result1 = $this->crypt->de($result);
+		echo $result1."<br />";
+
+
 	}
 }
 ?>

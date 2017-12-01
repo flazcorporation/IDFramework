@@ -8,6 +8,8 @@ class id_view extends id{
 		parent::html();
 		parent::theme();
 		parent::form();
+		parent::config();
+		parent::crypt();
 	}
 
 	public function index(){
@@ -21,7 +23,7 @@ class id_view extends id{
 			}	
 		}
 		$this->theme->front_header();
-		require_once id_project_dir.'/'.$this->uri->controller().'/'.$file;
+		require_once $this->config->id_project_dir.'/'.$this->uri->controller().'/'.$file;
 		$this->theme->front_footer();
 	}
 
@@ -33,7 +35,7 @@ class id_view extends id{
 		}
 		$this->theme->back_header();
 		$this->theme->back_navbar();
-		require_once id_project_dir.'/'.$this->uri->controller().'/'.$file;
+		require_once $this->config->id_project_dir.'/'.$this->uri->controller().'/'.$file;
 		$this->theme->back_footer();
 	}
 	

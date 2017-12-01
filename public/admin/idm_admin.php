@@ -19,6 +19,7 @@ class idm_admin extends id_model{
 
 	function getall(){
 		$result = $this->pdo->select_all('user');
+		return $result;
 	}
 	
 }
