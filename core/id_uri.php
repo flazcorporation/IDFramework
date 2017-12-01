@@ -1,16 +1,20 @@
 <?php
 if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;url="."http://".$_SERVER['SERVER_NAME']."'>");
-class id_uri extends id{
+class id_uri extends id
+{
 
-	function __construct(){
+	public function __construct()
+	{
 		parent::str();
 		parent::config();
 		parent::crypt();
 	}
 
-	public function controller(){
+	public function controller()
+	{
 		$get 		= array_keys($_GET);
-		if(isset($get[0])){
+		if(isset($get[0]))
+		{
 			$url 		= explode('/',$get[0]);
 			$page 		= $url[0];
 		}else{
@@ -19,9 +23,11 @@ class id_uri extends id{
 		return $this->crypt->de($page);
 	}
 
-	public function method(){
+	public function method()
+	{
 		$get 		= array_keys($_GET);
-		if(isset($get[0])){
+		if(isset($get[0]))
+		{
 			$url 		= explode('/',$get[1]);
 			$page 		= $url[0];
 		}else{
@@ -30,11 +36,14 @@ class id_uri extends id{
 		return $this->crypt->de($page);
 	}
 
-	public function segment($id){
+	public function segment($id)
+	{
 		$get 		= array_keys($_GET);
-		if(isset($get[0])){
+		if(isset($get[0]))
+		{
 			$url 		= explode('/',$get[0]);
-			if(sizeof($url)-1 < $id){
+			if(sizeof($url)-1 < $id)
+			{
 				return "";
 			}else{
 				return $this->crypt->de($url[$id]);
@@ -43,30 +52,38 @@ class id_uri extends id{
 			return "";
 		}
 	}
-	public function all(){
+	public function all()
+	{
 		$get 		= array_keys($_GET);
-		if(isset($get[0])){
+		if(isset($get[0]))
+		{
 			$url 		= explode('/',$get[0]);
 			return $this->crypt->de_arr_val($url);
 		}else{
 			return array();
 		}
 	}
-	public function last(){
+	public function last()
+	{
 		$get 		= array_keys($_GET);
-		if(isset($get[0])){
+		if(isset($get[0]))
+		{
 			$url 		= explode('/',$get[0]);
 			return $this->crypt->de(end($url));
 		}else{
 			return "";
 		}
 	}
-	public function except($remove){
+	public function except($remove)
+	{
 		$get 		= array_keys($_GET);
-		if(isset($get[0])){
+		if(isset($get[0]))
+		{
 			$url 		= explode('/',$get[0]);
-			foreach($url as $key => $value){
-				if(in_array($value,$this->crypt->en_arr_val($remove))){
+			foreach($url as $key => $value)
+			{
+				if(in_array($value,$this->crypt->en_arr_val($remove)))
+				{
 					unset($url[$key]);
 				}
 			}
@@ -75,15 +92,18 @@ class id_uri extends id{
 			return array();
 		}
 	}
-	function link($url = null){
-		if($url !== null){
+	public function link($url = null)
+	{
+		if($url !== null)
+		{
 			$url 		= explode('/',$get[0]);
 			$arr 		= $this->crypt->en_arr_val($url);
 			$url 		= implode('/',$arr);
 		}
 		return $this->config->id_base_url.'/'.$url;
 	}
-	function file($url = null){
+	public function file($url = null)
+	{
 		return $this->config->id_base_url.'/'.$url;
 	}
 }

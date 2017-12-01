@@ -1,9 +1,11 @@
 <?php
 if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;url="."http://".$_SERVER['SERVER_NAME']."'>");
 
-class id_view extends id{
+class id_view extends id
+{
 
-	function __construct(){
+	public function __construct()
+	{
 		parent::uri();
 		parent::html();
 		parent::theme();
@@ -12,13 +14,17 @@ class id_view extends id{
 		parent::crypt();
 	}
 
-	public function index(){
+	public function index()
+	{
 		$this->theme->index();
 	}
 
-	public function front($file,$data = null){
-		if(is_array($data)){
-			foreach($data as $key => $val){
+	public function front($file,$data = null)
+	{
+		if(is_array($data))
+		{
+			foreach($data as $key => $val)
+			{
 				${$key} 	= $val;
 			}	
 		}
@@ -27,9 +33,12 @@ class id_view extends id{
 		$this->theme->front_footer();
 	}
 
-	public function back($file,$data = null){
-		if(is_array($data)){
-			foreach($data as $key => $val){
+	public function back($file,$data = null)
+	{
+		if(is_array($data))
+		{
+			foreach($data as $key => $val)
+			{
 				${$key} 	= $val;
 			}	
 		}

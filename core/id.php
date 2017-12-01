@@ -1,21 +1,24 @@
 <?php
 if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;url="."http://".$_SERVER['SERVER_NAME']."'>");
 
-class id{
-	public $config;
-	public $crypt;
-	public $core;
-	public $uri;
-	public $cont;
-	public $mode;
-	public $view;
-	public $html;
-	public $pdo;
-	public $str;
-	public $theme;
-	public $form;
+class id
+{
+
+	protected $config;
+	protected $crypt;
+	protected $core;
+	protected $uri;
+	protected $cont;
+	protected $mode;
+	protected $view;
+	protected $html;
+	protected $pdo;
+	protected $str;
+	protected $theme;
+	protected $form;
 	
-	public function __construct(){
+	public function __construct()
+	{
 		require_once "config/id_config.php";
 		require_once "id_crypt.php";
 		require_once "id_core.php";
@@ -23,11 +26,11 @@ class id{
 		require_once "id_controller.php";
 		require_once "id_model.php";
 		require_once "id_view.php";
+		require_once "id_pdo.php";
+		require_once "id_str.php";
+		require_once "id_theme.php";
+		require_once "id_form.php";
 		require_once "helper/id_html.php";
-		require_once "helper/id_pdo.php";
-		require_once "helper/id_str.php";
-		require_once "helper/id_theme.php";
-		require_once "helper/id_form.php";
 		
 		$this->config 	= new id_config();
 		$this->crypt 	= new id_crypt();
@@ -43,57 +46,69 @@ class id{
 		$this->form		= new id_form();
 	}
 
-	public function config(){
+	public function config()
+	{
 		$this->config = new id_config();  		
   	}
 
-  	public function crypt(){
+	public function crypt()
+	{
 		$this->crypt = new id_crypt();  		
   	}
 
-	public function core(){
+	public function core()
+	{
 		$this->core = new id_core();  		
   	}
 
-  	public function uri(){
+	public function uri()
+	{
 		$this->uri = new id_uri();  		
   	}
 
-  	public function cont(){
+	public function cont()
+	{
 		$this->cont = new id_controller();  		
   	}
 
-  	public function mode(){
+	public function mode()
+	{
 		$this->mode = new id_model();  		
   	}
 
-  	public function view(){
+	public function view()
+	{
 		$this->view = new id_view();  		
   	}
 
-  	public function html(){
+	public function html()
+	{
 		$this->html = new id_html();  		
   	}
 
-  	public function pdo(){
+	public function pdo()
+	{
 		$this->pdo = new id_pdo();
   	}
 
-  	public function str(){
+	public function str()
+	{
 		$this->str = new id_str();
   	}
 
-  	public function theme(){
+	public function theme()
+	{
 		$this->theme = new id_theme();
   	}
 
-  	public function form(){
+	public function form()
+	{
 		$this->form = new id_form();
   	}
 
-	  public function run(){
+	public function run()
+	{
   		$this->core->execute();
-	}
-	  
+	}  
 }
 ?>

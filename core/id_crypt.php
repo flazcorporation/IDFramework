@@ -1,21 +1,29 @@
 <?php
 if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;url="."http://".$_SERVER['SERVER_NAME']."'>");
 
-class id_crypt extends id{
+class id_crypt extends id
+{
           
-    function __construct(){
+    public function __construct()
+    {
         parent::config();
 	}
 
-    function en($string){
-        if($this->config->id_crypt_status){
-            if(is_int($this->config->id_crypt_rot13) && $this->config->id_crypt_rot13 > 0){
-                for($i = 0; $i < $this->config->id_crypt_rot13; $i++){
+    public function en($string)
+    {
+        if($this->config->id_crypt_status)
+        {
+            if(is_int($this->config->id_crypt_rot13) && $this->config->id_crypt_rot13 > 0)
+            {
+                for($i = 0; $i < $this->config->id_crypt_rot13; $i++)
+                {
                     $string     = str_rot13($string);                    
                 }
             }            
-            if(is_int($this->config->id_crypt_base) && $this->config->id_crypt_base > 0){
-                for($i = 0; $i < $this->config->id_crypt_base; $i++){
+            if(is_int($this->config->id_crypt_base) && $this->config->id_crypt_base > 0)
+            {
+                for($i = 0; $i < $this->config->id_crypt_base; $i++)
+                {
                     $string     = base64_encode($string);
                 }
             }            
@@ -25,47 +33,62 @@ class id_crypt extends id{
         return $string;
     }
 
-    function en_arr_key($arr){
+    public function en_arr_key($arr)
+    {
         $array  = array();
-        if(is_array($arr)){
-            foreach($arr as $key => $val){
+        if(is_array($arr))
+        {
+            foreach($arr as $key => $val)
+            {
                 $array[$this->en($key)]    = $val;
             }
         }
         return  $array;
     }
 
-    function en_arr_val($arr){
+    public function en_arr_val($arr)
+    {
         $array  = array();
-        if(is_array($arr)){
-            foreach($arr as $key => $val){
+        if(is_array($arr))
+        {
+            foreach($arr as $key => $val)
+            {
                 $array[$key]    = $this->en($val);
             }
         }
         return  $array;
     }
 
-    function en_arr_key_val($arr){
-        if(is_array($arr)){
+    public function en_arr_key_val($arr)
+    {
+        if(is_array($arr))
+        {
             $array  = array();
-            foreach($arr as $key => $val){
+            foreach($arr as $key => $val)
+            {
                 $array[$this->en($key)]    = $this->en($val);
             }
         }
         return  $array;
     }
 
-    function de($string){
-        if($this->config->id_crypt_status){
+    public function de($string)
+    {
+        if($this->config->id_crypt_status)
+        {
             $string     =  str_replace('{','/',$string);
             $string     =  str_replace('}','=',$string);
-            if(is_int($this->config->id_crypt_base) && $this->config->id_crypt_base > 0){
-                for($i = 0; $i < $this->config->id_crypt_base; $i++){
+            if(is_int($this->config->id_crypt_base) && $this->config->id_crypt_base > 0)
+            {
+                for($i = 0; $i < $this->config->id_crypt_base; $i++)
+                {
                     $string     = base64_decode($string);
                 }
             }            
-            if(is_int($this->config->id_crypt_rot13) && $this->config->id_crypt_rot13 > 0){
-                for($i = 0; $i < $this->config->id_crypt_rot13; $i++){
+            if(is_int($this->config->id_crypt_rot13) && $this->config->id_crypt_rot13 > 0)
+            {
+                for($i = 0; $i < $this->config->id_crypt_rot13; $i++)
+                {
                     $string     = str_rot13($string);                    
                 }
             }            
@@ -73,30 +96,39 @@ class id_crypt extends id{
         return $string;
     }
 
-    function de_arr_key($arr){
+    public function de_arr_key($arr)
+    {
         $array  = array();
-        if(is_array($arr)){
-            foreach($arr as $key => $val){
+        if(is_array($arr))
+        {
+            foreach($arr as $key => $val)
+            {
                 $array[$this->de($key)]    = $val;
             }
         }
         return  $array;
     }
 
-    function de_arr_val($arr){
+    public function de_arr_val($arr)
+    {
         $array  = array();
-        if(is_array($arr)){
-            foreach($arr as $key => $val){
+        if(is_array($arr))
+        {
+            foreach($arr as $key => $val)
+            {
                 $array[$key]    = $this->de($val);
             }
         }
         return  $array;
     }
 
-    function de_arr_key_val($arr){
+    public function de_arr_key_val($arr)
+    {
         $array  = array();
-        if(is_array($arr)){
-            foreach($arr as $key => $val){
+        if(is_array($arr))
+        {
+            foreach($arr as $key => $val)
+            {
                 $array[$this->de($key)]    = $this->de($val);
             }
         }

@@ -3,7 +3,7 @@ if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;u
 
 class id_model extends id{
 
-	function __construct(){
+	public function __construct(){
 		parent::pdo();
 	}
 
