@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/flazcorporation/IDFramework/master/public/theme/front/web/images/IDFramework%20Front-End.png" />
+# <img src="https://raw.githubusercontent.com/flazcorporation/IDFramework/master/public/theme/back/material/image/Logo%20Horizontal.png" />
 
 The Indonesia PHP Framework
 IDFramework is a minify framework. This is very easy to use and small. Best for simple and middle application. This framework is maintained by community.
