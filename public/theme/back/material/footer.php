@@ -2,11 +2,15 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">Copyright</h5>
+          <p class="grey-text text-lighten-4">
+          Copyright (c) 2017, Flaz Corporation<br />
+          Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:          
+          </p>
 
 
         </div>
+        <!--
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
           <ul>
@@ -25,6 +29,7 @@
             <li><a class="white-text" href="#!">Link 4</a></li>
           </ul>
         </div>
+        -->
       </div>
     </div>
     <div class="footer-copyright">
