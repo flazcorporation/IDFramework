@@ -50,16 +50,21 @@ class id_theme extends id{
 	function back_index(){
 		$data 	= $this->data();
 		$this->back_header();
+		$this->back_navbar();
 		$this->load('theme/back/material/content.php',$data);
 		$this->back_footer();
   	}
 
   	function back_header(){
-		$data 	= $this->data();
-		$this->load('theme/back/material/header.php',$data);
+		$this->load('theme/back/material/header.php');
   	}
 
-  	function back_footer(){
+  	function back_navbar(){
+		$data 	= $this->data();
+		$this->load('theme/back/material/navbar.php',$data);
+  	}
+
+	  function back_footer(){
 		$this->load('theme/back/material/footer.php');
   	}
 	//======== BACK END THEME ========//

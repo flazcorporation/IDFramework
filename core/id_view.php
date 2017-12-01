@@ -32,6 +32,7 @@ class id_view extends id{
 			}	
 		}
 		$this->theme->back_header();
+		$this->theme->back_navbar();
 		require_once id_project_dir.'/'.$this->uri->controller().'/'.$file;
 		$this->theme->back_footer();
 	}
