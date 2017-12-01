@@ -25,12 +25,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- //Meta Tags -->
 	<!-- Style-sheets -->
-	<link href="<?php echo $this->uri->base('public/theme/front/web/css/bootstrap.css');?>" rel="stylesheet" type="text/css" media="all" />
-	<link href="<?php echo $this->uri->base('public/theme/front/web/css/font-awesome.css');?>" rel="stylesheet" type="text/css" media="all">
-	<link href="<?php echo $this->uri->base('public/theme/front/web/css/easy-responsive-tabs.css');?>" rel='stylesheet' type='text/css' />
-	<link href="<?php echo $this->uri->base('public/theme/front/web/css/style.css');?>" rel="stylesheet" type="text/css" media="all" />
-	<link href="<?php echo $this->uri->base('public/theme/front/web/css/owl.carousel.css');?>" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo $this->uri->base('public/theme/front/web/css/jquery-ui.css');?>" /><!-- // calendar -->
+	<link href="<?php echo $this->uri->file('public/theme/front/web/css/bootstrap.css');?>" rel="stylesheet" type="text/css" media="all" />
+	<link href="<?php echo $this->uri->file('public/theme/front/web/css/font-awesome.css');?>" rel="stylesheet" type="text/css" media="all">
+	<link href="<?php echo $this->uri->file('public/theme/front/web/css/easy-responsive-tabs.css');?>" rel='stylesheet' type='text/css' />
+	<link href="<?php echo $this->uri->file('public/theme/front/web/css/style.css');?>" rel="stylesheet" type="text/css" media="all" />
+	<link href="<?php echo $this->uri->file('public/theme/front/web/css/owl.carousel.css');?>" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo $this->uri->file('public/theme/front/web/css/jquery-ui.css');?>" /><!-- // calendar -->
 	<!-- // Style-sheets -->
 	<!-- Online-fonts -->
 	<link href="//fonts.googleapis.com/css?family=Montserrat:100,200,400,500,600" rel="stylesheet">

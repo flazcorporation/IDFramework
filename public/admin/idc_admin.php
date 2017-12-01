@@ -15,6 +15,9 @@ class idc_admin extends id_controller{
 
 	function index(){
 		$this->view->back('idv_index.php');
+		echo $this->crypt->en('admin');
+		echo "<br />";
+		echo $this->crypt->en('encrypt');
 	}
 	  
 	function model(){
@@ -33,8 +36,7 @@ class idc_admin extends id_controller{
 
 		$result1 = $this->crypt->de($result);
 		echo $result1."<br />";
-
-
+		var_dump($this->uri->except(array('admin','saya')));
 	}
 }
 ?>

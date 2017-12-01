@@ -16,6 +16,9 @@ class idc_blog extends id_controller{
 	function index(){
 		$this->view->index();
 		echo 'Ini adalah: '.$this->crypt->en('admin');
+		echo $this->crypt->en('admin');
+		echo "<br />";
+		echo $this->crypt->en('encrypt');		
 	}
 	  
 	function model(){

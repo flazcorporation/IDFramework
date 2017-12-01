@@ -8,7 +8,7 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="<?php echo $this->uri->base('public/theme/back/material/css/materialize.css');?>" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="<?php echo $this->uri->base('public/theme/back/material/css/style.css');?>" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="<?php echo $this->uri->file('public/theme/back/material/css/materialize.css');?>" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="<?php echo $this->uri->file('public/theme/back/material/css/style.css');?>" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>

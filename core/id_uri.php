@@ -46,8 +46,8 @@ class id_uri extends id{
 	public function all(){
 		$get 		= array_keys($_GET);
 		if(isset($get[0])){
-			$url 		= explode('/',$this->crypt->de($get[0]));
-			return $url;
+			$url 		= explode('/',$get[0]);
+			return $this->crypt->de_arr_val($url);
 		}else{
 			return array();
 		}
@@ -55,8 +55,8 @@ class id_uri extends id{
 	public function last(){
 		$get 		= array_keys($_GET);
 		if(isset($get[0])){
-			$url 		= explode('/',$this->crypt->de($get[0]));
-			return end($url);
+			$url 		= explode('/',$get[0]);
+			return $this->crypt->de(end($url));
 		}else{
 			return "";
 		}
@@ -64,19 +64,27 @@ class id_uri extends id{
 	public function except($remove){
 		$get 		= array_keys($_GET);
 		if(isset($get[0])){
-			$url 		= explode('/',$this->crypt->de($get[0]));
+			$url 		= explode('/',$get[0]);
 			foreach($url as $key => $value){
-				if(in_array($key,$remove)){
+				if(in_array($value,$this->crypt->en_arr_val($remove))){
 					unset($url[$key]);
 				}
 			}
-			return $url;
+			return $this->crypt->de_arr_val($url);
 		}else{
 			return array();
 		}
 	}
-	function base($url = null){
+	function link($url = null){
+		if($url !== null){
+			$url 		= explode('/',$get[0]);
+			$arr 		= $this->crypt->en_arr_val($url);
+			$url 		= implode('/',$arr);
+		}
 		return $this->config->id_base_url.'/'.$url;
-	}	
+	}
+	function file($url = null){
+		return $this->config->id_base_url.'/'.$url;
+	}
 }
 ?>
