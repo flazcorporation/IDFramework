@@ -41,5 +41,11 @@ class idc_admin extends id_controller
 		echo $result1."<br />";
 		var_dump($this->uri->except(array('admin','saya')));
 	}
+
+	public function form()
+	{
+		$this->view->back('idv_admin.php');
+	}
+	
 }
 ?>

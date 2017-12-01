@@ -16,6 +16,7 @@ class id
 	protected $str;
 	protected $theme;
 	protected $form;
+	protected $input;
 	
 	public function __construct()
 	{
@@ -30,6 +31,7 @@ class id
 		require_once "id_str.php";
 		require_once "id_theme.php";
 		require_once "id_form.php";
+		require_once "id_input.php";
 		require_once "helper/id_html.php";
 		
 		$this->config 	= new id_config();
@@ -44,6 +46,7 @@ class id
 		$this->str 		= new id_str();
 		$this->theme	= new id_theme();
 		$this->form		= new id_form();
+		$this->input	= new id_input();
 	}
 
 	public function config()
@@ -105,6 +108,11 @@ class id
 	{
 		$this->form = new id_form();
   	}
+
+	public function input()
+	{
+	  	$this->input = new id_input();
+	}
 
 	public function run()
 	{

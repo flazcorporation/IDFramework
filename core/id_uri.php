@@ -94,6 +94,7 @@ class id_uri extends id
 	}
 	public function link($url = null)
 	{
+		$get 		= array_keys($_GET);
 		if($url !== null)
 		{
 			$url 		= explode('/',$get[0]);
