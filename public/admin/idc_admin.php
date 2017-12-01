@@ -15,9 +15,6 @@ class idc_admin extends id_controller{
 
 	function index(){
 		$this->view->back('idv_index.php');
-		echo $this->crypt->en('admin');
-		echo "<br />";
-		echo $this->crypt->en('encrypt');
 	}
 	  
 	function model(){

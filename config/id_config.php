@@ -8,7 +8,7 @@ class id_config extends id{
     public $id_base_url      = "http://localhost:88/idframework";
     
     //=== ENCRYPTION ===//
-    public $id_crypt_status     = true;
+    public $id_crypt_status     = false;
     public $id_crypt_rot13      = 5;
     public $id_crypt_base       = 5;
     //=== ENCRYPTION ===//
