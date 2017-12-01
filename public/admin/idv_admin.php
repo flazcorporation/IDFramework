@@ -1,3 +1,3 @@
 <?php
-    echo "Back-End";
+    var_dump($data);
 ?>

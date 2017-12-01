@@ -11,9 +11,9 @@ class idm_admin extends id_model{
 		echo "Ini Model";
 	}
 
-	function get_data(){
-		$data['nama'] 	= "Mulyawan Sentosa";
-		$data['alamat']	= "Rangkasbitung";
+	function getdata(){
+		$data['nama'][0] 	= "Mulyawan";
+		$data['nama'][1]	= "Sentosa";
 		return $data;		
 	}
 

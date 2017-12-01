@@ -21,7 +21,8 @@ class idc_admin extends id_controller{
 	}
 
 	function tampilkan(){
-		$this->view->back('idv_admin.php');
+		$data['data'] = $this->model->getdata();
+		$this->view->back('idv_admin.php',$data);
 	}
 }
 ?>
