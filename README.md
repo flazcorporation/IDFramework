@@ -7,7 +7,7 @@ IDFramework is a minify framework. This is very easy to use and small. Best for 
 <img src="https://raw.githubusercontent.com/flazcorporation/IDFramework/master/public/theme/front/web/images/IDFramework%20Front-End.png" />
 
 # Back-End
-<img src="https://raw.githubusercontent.com/flazcorporation/IDFramework/master/public/theme/back/material/Starter%20Template%20%20%20Materialize.png" />
+<img src="https://raw.githubusercontent.com/flazcorporation/IDFramework/master/public/theme/back/material/image/Frontend.png" />
 
 # Fitur
 1. MVC (Model View Controller);
