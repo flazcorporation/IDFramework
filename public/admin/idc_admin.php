@@ -14,16 +14,32 @@ class idc_admin extends id_controller
 		parent::uri();
 		parent::crypt();
 		parent::validate();
+		parent::input();
 	}
 
 	public function index()
 	{
 		$this->view->back('idv_index.php');
-		$isi 	= 'emhulst@yahoo.com';
-		$data 	= array($isi,2,5.5,array(40,3.5,array(30,56)));
+		$this->input->init();
+		$data['satu'] 		= $this->input->text('Mulyawan',3,8);
+		$data['dua'] 		= $this->input->int('',3,8);
+		$data['tiga'] 		= $this->input->float(5,3,8);
+		$data['empat'] 		= $this->input->email('emhulst@yahoo.co.id');
+
 		echo "<pre>";
-		var_dump($this->validate->arr_string($data));
+		var_dump($this->input->result($data));
 		echo "</pre>";
+
+		$this->input->init();
+		$data['satu'] 		= $this->input->text('Mulyawan Sentosa',3,8);
+		$data['dua'] 		= $this->input->int(5,3,8);
+		$data['tiga'] 		= $this->input->float(5.3,3,8);
+		$data['empat'] 		= $this->input->email('emhulstyahoo.co.id');
+
+		echo "<pre>";
+		var_dump($this->input->result($data));
+		echo "</pre>";
+
 	}
 	  
 	public function model()
