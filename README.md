@@ -284,6 +284,13 @@ Method yang saat ini tersedia antara lain:
 ### $this->pdo->install_table($query)
 ### $this->pdo->install_table_transaction($database,$query)
 
+# Next Feature
+1. Otorized Class & Method List
+2. Otorized File List
+3. Session and Variable Class
+4. Usercode & Passcode for API
+5. More Input Type HTML
+
 # The MIT License (MIT)
 Copyright (c) 2017, Flaz Corporation
 

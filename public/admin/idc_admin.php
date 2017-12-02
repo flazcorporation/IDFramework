@@ -15,10 +15,20 @@ class idc_admin extends id_controller
 		parent::crypt();
 		parent::validate();
 		parent::input();
+		parent::form();
 	}
 
 	public function index()
 	{
+		echo $this->form->open('login', 'kirim', 'get', "onclick='alert('Saya')'");
+		echo $this->form->number('username','',2, 20, "onclick=alert('Mulyawan')");
+		echo $this->form->text('username', '',"onclick=alert('Mulyawan')");
+		echo $this->form->email('username','',"onclick=alert('Mulyawan')");
+		echo $this->form->url('username', '',"onclick=alert('Mulyawan')");
+		echo $this->form->checkbox('username', '',"onclick=alert('Mulyawan')");
+		echo $this->form->ip('username', '',"onclick=alert('Mulyawan')");
+		echo $this->form->mac('username', '',"onclick=alert('Mulyawan')");
+		echo $this->form->submit('username','Simpan',"onclick=alert('Mulyawan')");
 		$this->view->back('idv_index.php');
 		$this->input->init();
 		$data['satu'] 		= $this->input->text('Mulyawan',3,8);
