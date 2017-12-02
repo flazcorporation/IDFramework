@@ -25,6 +25,7 @@ class idc_admin extends id_controller
 		echo $this->form->text('username', '',"onclick=alert('Mulyawan')");
 		echo $this->form->email('username','',"onclick=alert('Mulyawan')");
 		echo $this->form->url('username', '',"onclick=alert('Mulyawan')");
+		echo $this->form->date('username', '',"onclick=alert('Mulyawan')");
 		echo $this->form->checkbox('username', '',"onclick=alert('Mulyawan')");
 		echo $this->form->ip('username', '',"onclick=alert('Mulyawan')");
 		echo $this->form->mac('username', '',"onclick=alert('Mulyawan')");

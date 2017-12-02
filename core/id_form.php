@@ -42,15 +42,21 @@ class id_form extends id
         return $field;
     }
 
+    public function ip($name, $value = null, $attr = null)
+    {
+        $field  = "<input type='text' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
     public function checkbox($name, $value = null, $attr = null)
     {
         $field  = "<input type='checkbox' name='$name' id='$name' value='$value' $attr />";
         return $field;
     }
     
-    public function ip($name, $value = null, $attr = null)
+    public function date($name, $value = null, $attr = null)
     {
-        $field  = "<input type='text' name='$name' id='$name' value='$value' $attr />";
+        $field  = "<input type='date' name='$name' id='$name' value='$value' $attr />";
         return $field;
     }
 
