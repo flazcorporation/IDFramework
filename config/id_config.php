@@ -20,6 +20,9 @@ class id_config extends id
     public  $id_trans_to     = 'id';
     //=== TRANSLATION ===//
 
+    //=== FORMAT ===//
+    public $format_date       = 'Y-m-d H:i:s';
+    //=== FORMAT ===//
     public function __construct()
     {
 

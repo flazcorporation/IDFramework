@@ -20,36 +20,17 @@ class idc_admin extends id_controller
 
 	public function index()
 	{
-		echo $this->form->open('login', 'kirim', 'get', "onclick='alert('Saya')'");
-		echo $this->form->number('username','',2, 20, "onclick=alert('Mulyawan')");
-		echo $this->form->text('username', '',"onclick=alert('Mulyawan')");
-		echo $this->form->email('username','',"onclick=alert('Mulyawan')");
-		echo $this->form->url('username', '',"onclick=alert('Mulyawan')");
-		echo $this->form->date('username', '',"onclick=alert('Mulyawan')");
-		echo $this->form->checkbox('username', '',"onclick=alert('Mulyawan')");
-		echo $this->form->ip('username', '',"onclick=alert('Mulyawan')");
-		echo $this->form->mac('username', '',"onclick=alert('Mulyawan')");
-		echo $this->form->submit('username','Simpan',"onclick=alert('Mulyawan')");
+		echo $this->form->open('login', $this->uri->link('admin/simpan'), 'post');
+		echo $this->form->number('number','',2, 20);
+		echo $this->form->text('text', '');
+		echo $this->form->email('email','');
+		echo $this->form->url('url', '');
+		echo $this->form->date('date', '','1986-01-01','2017-12-31');
+		//echo $this->form->checkbox('checkbox', 'Isi');
+		echo $this->form->ip('ip', '');
+		echo $this->form->mac('mac', '');
+		echo $this->form->submit('simpan','Simpan');
 		$this->view->back('idv_index.php');
-		$this->input->init();
-		$data['satu'] 		= $this->input->text('Mulyawan',3,8);
-		$data['dua'] 		= $this->input->int('',3,8);
-		$data['tiga'] 		= $this->input->float(5,3,8);
-		$data['empat'] 		= $this->input->email('emhulst@yahoo.co.id');
-
-		echo "<pre>";
-		var_dump($this->input->result($data));
-		echo "</pre>";
-
-		$this->input->init();
-		$data['satu'] 		= $this->input->text('Mulyawan Sentosa',3,8);
-		$data['dua'] 		= $this->input->int(5,3,8);
-		$data['tiga'] 		= $this->input->float(5.3,3,8);
-		$data['empat'] 		= $this->input->email('emhulstyahoo.co.id');
-
-		echo "<pre>";
-		var_dump($this->input->result($data));
-		echo "</pre>";
 
 	}
 	  
@@ -75,8 +56,24 @@ class idc_admin extends id_controller
 		var_dump($this->uri->except(array('admin','saya')));
 	}
 
-	public function form()
+	public function simpan()
 	{
+		$this->input->init();
+
+		$data['number'] 	= $this->input->int($_POST['number'],3,10);
+		$data['text'] 		= $this->input->text($_POST['text'],3,10);
+		$data['email'] 		= $this->input->email($_POST['email']);
+		$data['url'] 		= $this->input->url($_POST['url']);
+		$data['date'] 		= $this->input->date($_POST['date']);
+		//$data['checkbox'] 	= $this->input->checkbox($_POST['checkbox']);
+		$data['ip'] 		= $this->input->ip($_POST['ip']);
+		$data['mac'] 		= $this->input->mac($_POST['mac']);
+		var_dump($_POST);
+
+		$result 	= $this->input->result();
+		echo "<pre>";
+		var_dump($result);
+		echo "</pre>";
 		$this->view->back('idv_admin.php');
 	}
 	

@@ -290,6 +290,7 @@ Method yang saat ini tersedia antara lain:
 3. Session and Variable Class
 4. Usercode & Passcode for API
 5. More Input Type HTML
+6. Testing UUD untuk PDO
 
 # The MIT License (MIT)
 Copyright (c) 2017, Flaz Corporation

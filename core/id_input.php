@@ -43,7 +43,12 @@ class id_input extends id
         $this->result[][]  = $this->validate->url($value);
     }
 
-    public function bool($value)
+    public function date($value)
+    {
+        $this->result[][]  = $this->validate->date($value);
+    }
+
+    public function checkbox($value)
     {
         $this->result[][]  = $this->validate->bool($value);
     }
@@ -57,7 +62,6 @@ class id_input extends id
     {
         $this->result[][]  = $this->validate->mac($value);
     }
-
 
     public function arr_int($value, $min = null, $max = null)
     {
@@ -84,7 +88,7 @@ class id_input extends id
         $this->result[][]  = $this->validate->arr_url($value);
     }
 
-    public function arr_bool($value)
+    public function arr_checkbox($value)
     {
         $this->result[][]  = $this->validate->arr_bool($value);
     }

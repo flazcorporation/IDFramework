@@ -138,10 +138,17 @@ class id_validate extends id
         }
     }
 
-    public function date($data)
+    public function date($data, $format = null)
     {
-        $msg    = null;
-        if(checkdate($data))
+        if($format !== null)
+        {
+            $format    = $this->config->format_date;
+        }
+        
+        $d = DateTime::createFromFormat($format, $data);
+        $res = $d && $d->format($format) == $data;
+        var_dump($res);
+        if($res)
         {
             return $data;
         }else{

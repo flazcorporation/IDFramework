@@ -92,17 +92,18 @@ class id_uri extends id
 			return array();
 		}
 	}
+
 	public function link($url = null)
 	{
-		$get 		= array_keys($_GET);
-		if($url !== null)
+		if(is_array($url))
 		{
-			$url 		= explode('/',$get[0]);
+			$url 		= explode('/',$url);
 			$arr 		= $this->crypt->en_arr_val($url);
 			$url 		= implode('/',$arr);
 		}
 		return $this->config->id_base_url.'/'.$url;
 	}
+
 	public function file($url = null)
 	{
 		return $this->config->id_base_url.'/'.$url;

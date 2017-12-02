@@ -72,7 +72,7 @@ class id_error extends id
                     $this->err_solution = $this->trans->lang("Please check your Date");
                     break;
                 case "3107": // Boolean
-                    $this->err_msg      = $this->trans->lang("Value is invalid");
+                    $this->err_msg      = $this->trans->lang("Checkbox Value is invalid");
                     $this->err_solution = $this->trans->lang("Change your data to Boolean");
                     break;
                 case "3108": // IP
