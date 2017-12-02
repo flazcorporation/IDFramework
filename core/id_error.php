@@ -40,24 +40,52 @@ class id_error extends id
                     $this->err_solution = $this->trans->lang("Please create index Method on your class");
                     break;
                 case "3001": // Data
-                    $this->err_msg      = $this->trans->lang("value is too small");
+                    $this->err_msg      = $this->trans->lang("Value is too small");
                     $this->err_solution = $this->trans->lang("Please increase your value");
                     break;
                 case "3002": // Data
-                    $this->err_msg      = $this->trans->lang("value is too large");
+                    $this->err_msg      = $this->trans->lang("Value is too large");
                     $this->err_solution = $this->trans->lang("Please decrease your value");
                     break;
-                case "3101": // Data
-                    $this->err_msg      = $this->trans->lang("value is not Integer");
+                case "3101": // Integer
+                    $this->err_msg      = $this->trans->lang("Value is not Integer");
                     $this->err_solution = $this->trans->lang("Change your data to Integer");
                     break;
-                case "3201": // Data
-                    $this->err_msg      = $this->trans->lang("value is not Float");
+                case "3102": // Float
+                    $this->err_msg      = $this->trans->lang("Value is not Float");
                     $this->err_solution = $this->trans->lang("Change your data to Float");
                     break;
-                case "3301": // Data
-                    $this->err_msg      = $this->trans->lang("value is not String");
+                case "3103": // String
+                    $this->err_msg      = $this->trans->lang("Value is not string");
                     $this->err_solution = $this->trans->lang("Change your data to String");
+                    break;
+                case "3104": // Email
+                    $this->err_msg      = $this->trans->lang("Email is invalid");
+                    $this->err_solution = $this->trans->lang("Please check your email");
+                    break;
+                case "3105": // URL
+                    $this->err_msg      = $this->trans->lang("URL is invalid");
+                    $this->err_solution = $this->trans->lang("Please check your URL");
+                    break;
+                case "3106": // Date
+                    $this->err_msg      = $this->trans->lang("Date is invalid");
+                    $this->err_solution = $this->trans->lang("Please check your Date");
+                    break;
+                case "3107": // Boolean
+                    $this->err_msg      = $this->trans->lang("Value is invalid");
+                    $this->err_solution = $this->trans->lang("Change your data to Boolean");
+                    break;
+                case "3108": // IP
+                    $this->err_msg      = $this->trans->lang("IP is invalid");
+                    $this->err_solution = $this->trans->lang("Check your IP Address");
+                    break;
+                case "3109": // MAC
+                    $this->err_msg      = $this->trans->lang("MAC Address is invalid");
+                    $this->err_solution = $this->trans->lang("Check your MAC Address");
+                    break;
+                case "3201": // Array
+                    $this->err_msg      = $this->trans->lang("This is not Array");
+                    $this->err_solution = $this->trans->lang("Check your Array");
                     break;
                 default:
                     $this->err_msg = $this->trans->lang("Unknown error");

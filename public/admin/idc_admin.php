@@ -19,8 +19,11 @@ class idc_admin extends id_controller
 	public function index()
 	{
 		$this->view->back('idv_index.php');
-		$isi 	= 'percobaan aja lah ini mah';
-		var_dump($this->validate->string($isi,2,5));
+		$isi 	= 'emhulst@yahoo.com';
+		$data 	= array($isi,2,5.5,array(40,3.5,array(30,56)));
+		echo "<pre>";
+		var_dump($this->validate->arr_string($data));
+		echo "</pre>";
 	}
 	  
 	public function model()
