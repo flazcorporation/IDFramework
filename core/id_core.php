@@ -8,6 +8,7 @@ class id_core extends id
 	{
 		parent::uri();
 		parent::config();
+		parent::error();
 	}
 
 	public function dir_list($dir, $dir_array)
@@ -133,14 +134,14 @@ class id_core extends id
 						{
 							$class_file->index();
 						}else{
-							echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Default Method is not found</div>";
+							echo $this->error->show('1201');
 						}
 					}
 				}else{
-					echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Controller is not found</div>";
+					echo $this->error->show('1101');
 				}
 			}else{
-				echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Controller is not found</div>";
+				echo $this->error->show('1101');
 			}
 		}else{
 			$this->default_controller();
@@ -167,13 +168,13 @@ class id_core extends id
 					$class_file 	= new $classname();
 					$class_file->index();
 				}else{
-					echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Default Method is not found</div>";
+					echo $this->error->show('1202');
 				}
 			}else{
-				echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Default Controller is not found</div>";
+				echo $this->error->show('1102');
 			}
 		}else{
-			echo "<div style='padding: 20px 0px 20px 20px; width: 95%; border-left: 6px solid red; background-color: #FFFFCC;'>IDFramework Says: Default Controller is not found</div>";
+			echo $this->error->show('1102');
 		}
 	}	
 }

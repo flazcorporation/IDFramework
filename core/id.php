@@ -4,6 +4,8 @@ if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;u
 class id
 {
 
+	protected $trans;
+	protected $error;
 	protected $config;
 	protected $crypt;
 	protected $core;
@@ -15,11 +17,14 @@ class id
 	protected $pdo;
 	protected $str;
 	protected $theme;
+	protected $validate;
 	protected $form;
 	protected $input;
 	
 	public function __construct()
 	{
+		require_once "id_trans.php";
+		require_once "id_error.php";
 		require_once "config/id_config.php";
 		require_once "id_crypt.php";
 		require_once "id_core.php";
@@ -30,10 +35,13 @@ class id
 		require_once "id_pdo.php";
 		require_once "id_str.php";
 		require_once "id_theme.php";
+		require_once "id_validate.php";
 		require_once "id_form.php";
 		require_once "id_input.php";
 		require_once "helper/id_html.php";
 		
+		$this->trans 	= new id_trans();
+		$this->error 	= new id_error();
 		$this->config 	= new id_config();
 		$this->crypt 	= new id_crypt();
 		$this->core 	= new id_core();
@@ -45,8 +53,19 @@ class id
 		$this->pdo 		= new id_pdo();
 		$this->str 		= new id_str();
 		$this->theme	= new id_theme();
+		$this->validate	= new id_validate();
 		$this->form		= new id_form();
 		$this->input	= new id_input();
+	}
+
+	public function trans()
+	{
+		$this->trans = new id_trans();  		
+  	}
+
+	public function error()
+  	{
+		  $this->error = new id_error();  		
 	}
 
 	public function config()
@@ -104,7 +123,12 @@ class id
 		$this->theme = new id_theme();
   	}
 
-	public function form()
+	public function validate()
+  	{
+		  $this->validate = new id_validate();
+	}
+
+		public function form()
 	{
 		$this->form = new id_form();
   	}

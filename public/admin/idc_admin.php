@@ -13,11 +13,14 @@ class idc_admin extends id_controller
 		$this->view 	= new id_view();
 		parent::uri();
 		parent::crypt();
+		parent::validate();
 	}
 
 	public function index()
 	{
 		$this->view->back('idv_index.php');
+		$isi 	= 'percobaan aja lah ini mah';
+		var_dump($this->validate->string($isi,2,5));
 	}
 	  
 	public function model()
