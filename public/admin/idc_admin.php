@@ -6,6 +6,7 @@ class idc_admin extends id_controller
 
 	protected $model;
 	protected $view;
+	protected $apa;
 
 	public function __construct()
 	{
@@ -16,6 +17,9 @@ class idc_admin extends id_controller
 		parent::validate();
 		parent::input();
 		parent::form();
+		parent::secure();
+		$this->apa  = "Saya Admin";
+
 	}
 
 	public function index()
@@ -26,12 +30,24 @@ class idc_admin extends id_controller
 		echo $this->form->email('email','');
 		echo $this->form->url('url', '');
 		echo $this->form->date('date', '','1986-01-01','2017-12-31');
-		//echo $this->form->checkbox('checkbox', 'Isi');
+		echo $this->form->radio('radio', 'Isi');
 		echo $this->form->ip('ip', '');
 		echo $this->form->mac('mac', '');
 		echo $this->form->submit('simpan','Simpan');
 		$this->view->back('idv_index.php');
-
+		
+		/*
+		echo "<pre>";
+		$data = $this->secure->id_class(1);
+		foreach($data as $key => $val)
+		{
+			var_dump($val);
+			echo "<hr />";
+		}
+		//var_dump($this->secure->id_class(2));
+		echo "</pre>";
+		*/
+		//$this->secure->class_unreg();
 	}
 	  
 	public function model()
@@ -65,10 +81,9 @@ class idc_admin extends id_controller
 		$data['email'] 		= $this->input->email($_POST['email']);
 		$data['url'] 		= $this->input->url($_POST['url']);
 		$data['date'] 		= $this->input->date($_POST['date']);
-		//$data['checkbox'] 	= $this->input->checkbox($_POST['checkbox']);
+		$data['radio'] 		= $this->input->radio($_POST['radio']);
 		$data['ip'] 		= $this->input->ip($_POST['ip']);
 		$data['mac'] 		= $this->input->mac($_POST['mac']);
-		var_dump($_POST);
 
 		$result 	= $this->input->result();
 		echo "<pre>";

@@ -4,6 +4,8 @@ if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;u
 class id
 {
 
+	protected $filelib;
+	protected $secure;
 	protected $trans;
 	protected $error;
 	protected $config;
@@ -20,9 +22,12 @@ class id
 	protected $validate;
 	protected $form;
 	protected $input;
+	protected $arr;
 	
 	public function __construct()
 	{
+		require_once "config/id_filelib.php";
+		require_once "id_secure.php";
 		require_once "id_trans.php";
 		require_once "id_error.php";
 		require_once "config/id_config.php";
@@ -39,23 +44,18 @@ class id
 		require_once "id_form.php";
 		require_once "id_input.php";
 		require_once "helper/id_html.php";
-		
-		$this->trans 	= new id_trans();
-		$this->error 	= new id_error();
-		$this->config 	= new id_config();
-		$this->crypt 	= new id_crypt();
-		$this->core 	= new id_core();
-		$this->uri 		= new id_uri();
-		$this->cont 	= new id_controller();
-		$this->mode 	= new id_model();
-		$this->view 	= new id_view();
-		$this->html 	= new id_html();
-		$this->pdo 		= new id_pdo();
-		$this->str 		= new id_str();
-		$this->theme	= new id_theme();
-		$this->validate	= new id_validate();
-		$this->form		= new id_form();
-		$this->input	= new id_input();
+		require_once "id_arr.php";
+		$this->secure 	= new id_secure();
+	}
+
+	public function filelib()
+	{
+		$this->filelib 	= new id_filelib();  		
+	}
+
+	public function secure()
+	{
+		$this->secure 	= new id_secure();  		
 	}
 
 	public function trans()
@@ -138,9 +138,24 @@ class id
 	  	$this->input = new id_input();
 	}
 
+	public function arr()
+	{
+	  	$this->arr = new id_arr();
+	}
+	
 	public function run()
 	{
-  		$this->core->execute();
-	}  
+		/*
+		echo "<pre>";
+		$data 	= $this->secure->dirlist('.');
+		echo "</pre>";
+		foreach($data as $key){
+			echo '"'.$key.'",'."<br />";
+		}
+		*/
+		$core = new id_core();
+		$core->execute();
+	}
+  
 }
 ?>

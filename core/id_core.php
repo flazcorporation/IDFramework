@@ -33,7 +33,7 @@ class id_core extends id
 	    return $dir_array;
 	}
 
-	public function check_controller_file($controller)
+	private function check_controller_file($controller)
 	{
 		if(file_exists($this->config->id_project_dir.'/'.$controller.'/idc_'.$controller.'.php'))
 		{
@@ -43,7 +43,7 @@ class id_core extends id
 		}
 	}
 
-	public function include_controller_file($class)
+	private function include_controller_file($class)
 	{
 		$folder_list = array();
 		$folder_list = $this->dir_list($this->config->id_project_dir,$folder_list);
@@ -62,7 +62,7 @@ class id_core extends id
 		}	
 	}
 
-	public function check_model_file($controller)
+	private function check_model_file($controller)
 	{
 		if(file_exists($this->config->id_project_dir.'/'.$controller.'/idm_'.$controller.'.php'))
 		{
@@ -72,7 +72,7 @@ class id_core extends id
 		}
 	}
 
-	public function include_model_file($class)
+	private function include_model_file($class)
 	{
 		$folder_list = array();
 		$folder_list = $this->dir_list($this->config->id_project_dir,$folder_list);
@@ -148,7 +148,7 @@ class id_core extends id
 		}		
 	}
 
-	public function default_controller()
+	private function default_controller()
 	{
 		//Check to require_once model
 		if($this->check_model_file($this->config->id_default_root))

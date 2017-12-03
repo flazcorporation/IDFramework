@@ -16,8 +16,20 @@ IDFramework is a minify framework. This is very easy to use and small. Best for 
 4. HTML Class;
 5. PDO Class;
 6. File Project yang bisa diubah/dipindahkan;
-7. File lebih kecil, hanya 130KB;
-8. dan fitur lainnya yang sedang dikembangkan.
+7. File lebih kecil;
+8. Session and Variable Class
+9. Usercode & Passcode for API
+10. Input Type HTML
+11. UUD
+12. Data Validation
+13. Encryption
+14. Frontend Theme
+15. Backend Theme
+16. Error Handler
+17. Array Function
+18. String Function
+19. Translation
+17. dan fitur lainnya yang sedang dikembangkan.
 
 # Spesifikasi Sistem
 
@@ -291,6 +303,13 @@ Method yang saat ini tersedia antara lain:
 4. Usercode & Passcode for API
 5. More Input Type HTML
 6. Testing UUD untuk PDO
+7. Captcha Form
+8. Data Validation
+9. Encryption
+10. Frontend Theme
+11. Backend Theme
+12. Error Handler
+
 
 # The MIT License (MIT)
 Copyright (c) 2017, Flaz Corporation

@@ -18,55 +18,133 @@ class id_form extends id
         return $form;
     }
 
-    public function number($name, $value = null, $min = null, $max = null, $attr = null)
+    public function number($name = null, $value = null, $min = null, $max = null, $attr = null)
     {
         $field  = "<input type='number' name='$name' id='$name' value='$value' min='$min' max='$max' $attr />";
         return $field;
     }
 
-    public function text($name, $value = null, $attr = null)
+    public function text($name = null, $value = null, $attr = null)
     {
         $field  = "<input type='text' name='$name' id='$name'  value='$value' $attr />";
         return $field;
     }
 
-    public function email($name, $value = null, $attr = null)
+    public function email($name = null, $value = null, $attr = null)
     {
         $field  = "<input type='email' name='$name' id='$name' value='$value' $attr />";
         return $field;
     }
 
-    public function url($name, $value = null, $attr = null)
+    public function url($name = null, $value = null, $attr = null)
     {
         $field  = "<input type='url' name='$name' id='$name' value='$value' $attr />";
         return $field;
     }
 
-    public function ip($name, $value = null, $attr = null)
+    public function ip($name = null, $value = null, $attr = null)
     {
         $field  = "<input type='text' name='$name' id='$name' value='$value' $attr />";
         return $field;
     }
 
-    public function checkbox($name, $value = null, $attr = null)
+    public function checkbox($name = null, $value = null, $attr = null)
     {
         $field  = "<input type='checkbox' name='$name' id='$name' value='$value' $attr />";
         return $field;
     }
     
-    public function date($name, $value = null, $attr = null)
+    public function radio($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='radio' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function date($name = null, $value = null, $attr = null)
     {
         $field  = "<input type='date' name='$name' id='$name' value='$value' $attr />";
         return $field;
     }
 
-    public function mac($name, $value = null, $attr = null)
+    public function mac($name = null, $value = null, $attr = null)
     {
         $field  = "<input type='text' name='$name' id='$name' value='$value' $attr />";
         return $field;
     }
 
-    public function submit($name, $value = null, $attr = null)
+    public function textarea($name = null, $value = null, $attr = null)
+    {
+        $field  = "<textarea name='$name' id='$name' $attr>$value</textarea>";
+        return $field;
+    }
+    
+    public function password($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='password' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function reset($name = null, $attr = null)
+    {
+        $field  = "<input type='reset' name='$name' id='$name' $attr />";
+        return $field;
+    }
+
+    public function button($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='button' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function color($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='color' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function range($name = null, $value = null, $min = null, $max = null, $attr = null)
+    {
+        $field  = "<input type='range' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function datetime($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='datetime-local' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function month($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='month' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function search($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='search' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+    
+    public function tel($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='tel' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function time($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='time' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function week($name = null, $value = null, $attr = null)
+    {
+        $field  = "<input type='week' name='$name' id='$name' value='$value' $attr />";
+        return $field;
+    }
+
+    public function submit($name = null, $value = null, $attr = null)
     {
         if($value == null){
             $value = $this->trans->lang('Process');

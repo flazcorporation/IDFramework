@@ -14,7 +14,7 @@ class id_theme extends id
 		parent::crypt();
     }
 
-	public function load($file,$dat = null)
+	private function load($file,$dat = null)
 	{
 		if(is_array($dat))
 		{
@@ -26,7 +26,7 @@ class id_theme extends id
 		require_once $this->config->id_project_dir.'/'.$file;
 	}
 
-	public function data()
+	private function data()
 	{
 		$data['name'] 		= 'IDFramework';
 		return $data;		

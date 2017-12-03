@@ -13,7 +13,7 @@ class id_validate extends id
     public function int($data, $min = null, $max = null)
     {
         $msg    = null;
-        if(is_int($data))
+        if(is_int((int)$data))
         {
             if($min !== null)
             {
@@ -47,7 +47,7 @@ class id_validate extends id
     public function float($data, $min = null, $max = null)
     {
         $msg    = null;
-        if(is_float($data))
+        if(is_float((float)$data))
         {
             if($min !== null)
             {
@@ -138,18 +138,48 @@ class id_validate extends id
         }
     }
 
-    public function date($data, $format = null)
+    private function date_check1($date)
     {
-        if($format !== null)
+        if(preg_match("/^(\d{4})-(\d{2})-(\d{2})$/", $date, $matches)) 
         {
-            $format    = $this->config->format_date;
+            if(checkdate($matches[2], $matches[3], $matches[1]))
+            { 
+                return true;
+            }
         }
-        
-        $d = DateTime::createFromFormat($format, $data);
-        $res = $d && $d->format($format) == $data;
-        var_dump($res);
-        if($res)
+    }
+
+    private function date_check2($date)
+    {
+        if(preg_match("/^(\d{2})\/(\d{2})\/(\d{4})$/", $date, $matches))
         {
+            if(checkdate($matches[2], $matches[1], $matches[3]))
+            {
+                return true; 
+            }
+        }
+    }
+
+    private function date_check3($date)
+    {
+        if(preg_match("/^(\d{2})-(\d{2})-(\d{4})$/", $date, $matches)) 
+        {
+            if(checkdate($matches[1], $matches[2], $matches[3]))
+            {
+                return true;
+            }
+        }
+    }
+
+
+    public function date($data)
+    {
+        if($this->date_check1($data))
+        {
+            return $data;
+        }elseif($this->date_check2($data)){
+            return $data;
+        }elseif($this->date_check3($data)){
             return $data;
         }else{
             $error['data']        = $data;
