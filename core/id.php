@@ -153,6 +153,7 @@ class id
 			echo '"'.$key.'",'."<br />";
 		}
 		*/
+		$data 	= $this->secure->dirlist('.');
 		$core = new id_core();
 		$core->execute();
 	}

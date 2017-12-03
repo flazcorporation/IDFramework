@@ -24,6 +24,7 @@ class idc_admin extends id_controller
 
 	public function index()
 	{
+		/*
 		echo $this->form->open('login', $this->uri->link('admin/simpan'), 'post');
 		echo $this->form->number('number','',2, 20);
 		echo $this->form->text('text', '');
@@ -34,6 +35,7 @@ class idc_admin extends id_controller
 		echo $this->form->ip('ip', '');
 		echo $this->form->mac('mac', '');
 		echo $this->form->submit('simpan','Simpan');
+		*/
 		$this->view->back('idv_index.php');
 		
 		/*
