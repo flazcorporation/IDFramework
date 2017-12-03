@@ -9,9 +9,63 @@ class id_secure extends id
 
     public function __construct()
     {
-        parent::core();
+        parent::classlib();
+        parent::arr();
+        $this->classreg        = $this->classlib->class_reg;
     }
-        
+    
+    /*
+    public function class_check($classunreg, $classreg)
+    {
+        echo "<pre>";
+        var_dump($classunreg);
+        echo "";
+        var_dump($classreg);
+        echo "</pre>";
+        $this->classunreg      = $this->arr->compare($classunreg, $classreg);
+        return $this->classunreg;
+    }
+
+    public function class_reg(){
+        return $this->classreg;
+    }
+
+    public function class_id()
+    {
+        $class = $this->class_id_active(2);
+        return $class['object'];
+    }
+
+    private function class_id_active($id){
+        $trace = debug_backtrace();
+        if (isset($trace[1])) {
+            return $trace[$id];
+        }
+    }
+
+    public function class_array($data)
+    {
+        $class      = array();
+		foreach($data as $key => $val)
+		{
+			if($key == 'secure')
+			{
+				foreach($val as $key1 => $val1){
+					if($key1 == 'classlib')
+					{
+						$class = $val1->{'class_reg'};
+					}else{
+						continue;
+					}
+				}
+			}else{
+				continue;
+			}
+		}
+		return $class;
+    }
+    */
+    
     public function dirlist($rootDir, $allData=array())
     {
         // set filenames invisible if you want
@@ -37,6 +91,8 @@ class id_secure extends id
         }
         return $allData;
     }
+
+
 }
 
 

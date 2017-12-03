@@ -4,7 +4,7 @@ if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;u
 class id
 {
 
-	protected $filelib;
+	protected $classlib;
 	protected $secure;
 	protected $trans;
 	protected $error;
@@ -23,10 +23,11 @@ class id
 	protected $form;
 	protected $input;
 	protected $arr;
+	private   $class 	= array();
 	
 	public function __construct()
 	{
-		require_once "config/id_filelib.php";
+		require_once "config/id_classlib.php";
 		require_once "id_secure.php";
 		require_once "id_trans.php";
 		require_once "id_error.php";
@@ -48,9 +49,10 @@ class id
 		$this->secure 	= new id_secure();
 	}
 
-	public function filelib()
+
+	public function classlib()
 	{
-		$this->filelib 	= new id_filelib();  		
+		$this->classlib 	= new id_classlib();  		
 	}
 
 	public function secure()
@@ -143,8 +145,39 @@ class id
 	  	$this->arr = new id_arr();
 	}
 	
+
+	/*
+	//=== CHECKING REGISTERED CLASS ===/
+	private function classid()
+	{
+		$data 			= $this->secure->class_id();
+		$result 		= $this->secure->class_array($data);
+		echo "<pre>";
+        var_dump($result);
+        echo "<hr />";
+		return $result;
+	}
+	//=== CHECKING REGISTERED CLASS ===/
+
+	public function classlib()
+	{
+		$this->classlib = new id_classlib();  		
+  	}
+	
+	private function classcheck(){
+		$classreg 	 		= $this->secure->class_reg();
+		$classworking 		= $this->classid();
+		$classunreg 		= $this->secure->class_check($classworking, $classreg);
+		return $classunreg;
+	}
+	*/
+
 	public function run()
 	{
+		//var_dump($this->classcheck());
+
+
+		//== file lise ==//
 		/*
 		echo "<pre>";
 		$data 	= $this->secure->dirlist('.');
@@ -153,7 +186,7 @@ class id
 			echo '"'.$key.'",'."<br />";
 		}
 		*/
-		$data 	= $this->secure->dirlist('.');
+		
 		$core = new id_core();
 		$core->execute();
 	}
