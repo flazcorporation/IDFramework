@@ -92,7 +92,6 @@ class idc_admin extends id_controller
 		var_dump($result);
 		echo "</pre>";
 		$this->view->back('idv_admin.php');
-	}
-	
+	}	
 }
 ?>
