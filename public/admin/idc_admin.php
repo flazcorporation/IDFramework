@@ -18,7 +18,6 @@ class idc_admin extends id_controller
 		parent::input();
 		parent::form();
 		parent::secure();
-		$this->apa  = "Saya Admin";
 
 	}
 
