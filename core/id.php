@@ -3,6 +3,27 @@ namespace ID;
 
 if(count(get_included_files()) ==1)exit("<meta http-equiv='refresh' content='0;url="."http://".$_SERVER['SERVER_NAME']."'>");
 
+
+/*
+use ID\id_classlib;
+use ID\id_secure;
+use ID\id_trans;
+use ID\id_error;
+use ID\id_crypt;
+use ID\id_core;
+use ID\id_uri;
+use ID\id_controller;
+use ID\id_model;
+use ID\id_view;
+use ID\id_pdo;
+use ID\id_str;
+use ID\id_theme;
+use ID\id_validate;
+use ID\id_form;
+use ID\id_input;
+use ID\id_arr;
+*/
+
 class id
 {
 

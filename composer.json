@@ -16,6 +16,9 @@
     "autoload":{
         "psr-4":{
             "ID\\":"core/"
-        }
+        },
+        "classmap":[
+            "config/id_classlib.php"
+        ]
     }
 }
