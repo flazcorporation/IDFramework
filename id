@@ -3,8 +3,10 @@
 require_once __DIR__ . '/vendor/autoload.php';
 use Symfony\Component\Console\Application;
 use ID\cli;
+use ID\test;
 
 $application = new Application();
 $application->add(new cli());
+$application->add(new test());
 $application->run();
 ?>
