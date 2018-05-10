@@ -3,7 +3,8 @@
     "description": "The Indonesia PHP Framework",
     "type": "project",
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "symfony/console": "^4.0"        
     },
     "authors": [
         {

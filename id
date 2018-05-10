@@ -1,0 +1,10 @@
+#!/usr/bin
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+use Symfony\Component\Console\Application;
+use ID\cli;
+
+$application = new Application();
+$application->add(new cli());
+$application->run();
+?>
