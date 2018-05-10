@@ -1,0 +1,20 @@
+{
+    "name": "flazcorporation/idframework",
+    "description": "The Indonesia PHP Framework",
+    "type": "project",
+    "require": {
+        "php": "^7.1"
+    },
+    "authors": [
+        {
+            "name": "flazcorporation",
+            "email": "development@flazhost.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload":{
+        "psr-4":{
+            "ID\\":"core/"
+        }
+    }
+}
