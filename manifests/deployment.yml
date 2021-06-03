@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "flazcluster-060a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "flazcluster-060a"
+  template:
+    metadata:
+      labels:
+        app: "flazcluster-060a"
+    spec:
+      containers:
+        - name: "flazcluster-060a"
+          image: "flazengine.azurecr.io/flazcluster"
+          ports:
+          - containerPort: 80
